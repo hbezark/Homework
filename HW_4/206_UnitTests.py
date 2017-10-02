@@ -1,6 +1,6 @@
 import random
 import unittest
-import urllib
+
 # SI 206 Fall 2017
 # Homework 3 - Code
 
@@ -172,9 +172,9 @@ class TestCases(unittest.TestCase):
 	def test_myTestInstance1(self): #Testing that the variable "Queen" is a string, rather than an integer, float, boolean or any other type of variable
 		c = Card(rank=12)
 		self.assertEqual(type(c.rank), str)
-	def test_myTestInstance2(self): #Testing that if you invoke the __str__ method of a card instance that is created with suit = 3, rank = 10, it returns the string "10 of Spades"
-		c = Card(suit = 3, rank = 10)
-		self.assertEqual(str(c), "10 of Spades")
+	def test_myTestInstance2(self): #Testing that the first item in the list created by .cards is an instance of Card()
+		d = Deck()
+		self.assertEqual(type(d.cards[0]), type(Card()))
 
 
 
