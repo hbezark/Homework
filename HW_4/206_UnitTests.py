@@ -1,6 +1,6 @@
 import random
 import unittest
-
+import urllib
 # SI 206 Fall 2017
 # Homework 3 - Code
 
@@ -24,7 +24,7 @@ class Card(object):
 			self.rank = self.faces[rank]
 		else:
 			self.rank = rank
-		self.rank_num = rank # To handle winning comparison 
+		self.rank_num = rank # To handle winning comparison
 
 	def __str__(self):
 		return "{} of {}".format(self.rank,self.suit)
@@ -56,7 +56,7 @@ class Deck(object):
 	def replace_card(self, card):
 		card_strs = [] # forming an empty list
 		for c in self.cards: # each card in self.cards (the initial list)
-			card_strs.append(c.__str__()) # appends the string that represents that card to the empty list 
+			card_strs.append(c.__str__()) # appends the string that represents that card to the empty list
 		if card.__str__() not in card_strs: # if the string representing this card is not in the list already
 			self.cards.append(card) # append it to the list
 
@@ -118,7 +118,7 @@ if __name__ == "__main__":
 
 ######### DO NOT CHANGE CODE ABOVE THIS LINE #########
 
-## You can write any additional debugging/trying stuff out code here... 
+## You can write any additional debugging/trying stuff out code here...
 ## OK to add debugging print statements, but do NOT change functionality of existing code.
 ## Also OK to add comments!
 
@@ -171,15 +171,15 @@ class TestCases(unittest.TestCase):
 		self.assertEqual(type(p[0]), str)
 	def test_myTestInstance1(self): #Testing that the variable "Queen" is a string, rather than an integer, float, boolean or any other type of variable
 		c = Card(rank=12)
-		self.assertEqual(type(c.rank), str) 
+		self.assertEqual(type(c.rank), str)
 	def test_myTestInstance2(self): #Testing that if you invoke the __str__ method of a card instance that is created with suit = 3, rank = 10, it returns the string "10 of Spades"
 		c = Card(suit = 3, rank = 10)
 		self.assertEqual(str(c), "10 of Spades")
-		
+
 
 
 
 #############
 ## The following is a line to run all of the tests you include:
-unittest.main(verbosity=2) 
+unittest.main(verbosity=2)
 ## verbosity 2 to see detail about the tests the code fails/passes/etc.
